@@ -15,6 +15,7 @@ services:
       - "5432:5432"
     # Path to store the data for the containers volumes
     volumes:
+      # outside/inside, can change db to ./database to store right in root dir.
       - db:/var/lib/postgresql/data
 volumes:
   db:
