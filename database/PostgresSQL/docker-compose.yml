@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     # Define the image
-    image: postgres:14.1-alpine
+    image: postgres:latest
     # Always restart if container stops
     restart: always
     # Define evs for the image

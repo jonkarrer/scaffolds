@@ -1,6 +1,24 @@
 services:
   nginx:
-    image: nginx:latest
+    # Specify path to Dockerfile
+    build: ./nginx/
     container_name: nginx-container
     ports:
       - 80:80
+    links:
+      - php
+    volumes_from:
+      - app-data
+  php:
+    image: php:8.2.1-fpm
+    container_name: php-container
+    expose:
+      - 9000
+    volumes_from:
+      - app-data
+  app-data:
+    image: php:8.2.1-fpm
+    container_name: app-data-container
+    volumes:
+      - ./www/html/:/var/www/html/
+    command: "true"

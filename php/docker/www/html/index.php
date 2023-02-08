@@ -6,5 +6,5 @@
 
 <body>
   <h1>Hello World!</h1>
-  <p><?php echo 'We are running PHP, version: ' . phpversion(); ?></p>
+  <p><?php echo 'Changes more: ' . phpversion(); ?></p>
 </body>
