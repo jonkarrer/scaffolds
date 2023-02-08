@@ -14,22 +14,13 @@ if (!$db) {
   echo "Opened database successfully\n";
 }
 
-// $sql = "CREATE TABLE users (
-//   id SERIAL PRIMARY KEY,
-//   user_id TEXT NOT NULL,
-//   name TEXT NOT NULL,
-//   email TEXT NOT NULL UNIQUE
-// )";
+$sql = "CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE
+)";
 
-// $sql = "
-// INSERT INTO users (user_id, name, email)
-// VALUES (1, 'John Doe', 'johndoe@example.com');
-// ";
-
-// $sql = "DELETE FROM users WHERE user_id = '1';";
-// $sql = "DROP TABLE table_name";
-
-$sql = "SELECT * FROM users";
 
 $ret = pg_query($db, $sql);
 if (!$ret) {
